@@ -1,0 +1,35 @@
+name: pixelaro
+title: Pixelaro
+version: '1.0.0'
+summary: Professional Image Editor by Jair Rodrigues
+description: |
+  Pixelaro is a modern, cross-platform image editor built with Flutter.
+  It offers crop, rotation, filters, painting tools, and text insertion.
+  Designed for productivity with drag-and-drop support.
+
+license: BSD-2-Clause
+contact: mailto:jairodrigues99@gmail.com
+website: https://github.com/JairRodrigue/pixelaro
+source-code: https://github.com/JairRodrigue/pixelaro
+issues: https://github.com/JairRodrigue/pixelaro/issues
+
+confinement: strict
+base: core22
+grade: stable
+
+apps:
+  pixelaro:
+    command: pixelaro
+    extensions: [gnome]
+    plugs:
+      - home            
+      - network         
+      - removable-media 
+      - desktop         
+      - desktop-legacy
+
+parts:
+  pixelaro:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart
